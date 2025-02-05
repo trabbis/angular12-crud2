@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center"> Create Book </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label> Title</label>
+                        <input type="text" class="form-control" id="title" [(ngModel)]="book.title"
+                            name="title">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Overdrive Url</label>
+                        <input type="text" class="form-control" id="overdriveUrl" [(ngModel)]="book.overdriveUrl"
+                            name="overdriveUrl">
+                    </div>
+
+                    <div class="form-group">
+                        <label> carousel Id</label>
+                        <input type="text" class="form-control" id="carouselId" [(ngModel)]="book.carouselId"
+                            name="carouselId">
+                    </div>
+
+                    <div class="form-group">
+                        <label> order Index</label>
+                        <input type="text" class="form-control" id="orderIndex" [(ngModel)]="book.orderIndex"
+                            name="orderIndex">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Cover</label>
+                        <input type="text" class="form-control" id="cover" [(ngModel)]="book.cover"
+                            name="cover">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Author</label>
+                        <input type="text" class="form-control" id="author" [(ngModel)]="book.author"
+                            name="author">
+                    </div>
+
+
+                    <br />
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
