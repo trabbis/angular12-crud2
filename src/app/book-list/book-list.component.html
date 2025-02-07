@@ -1,1 +1,34 @@
-<p>book-list works!</p>
+<div class = "row">
+    <h2> Book List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> Title</th>
+            <th> Cover </th>
+            <th> Authoer</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let book of books" >
+            <td>  
+
+                <a href="{{ book.overdriveUrl }}" class="bookContent" onclick="ga('send', 'event', 'Book Click', 'Solve the mystery', 'The Maid by Nita Prose');">
+
+                <img alt="{{ book.title }}" src="/assets/images/{{ book.cover }}">
+                </a>
+
+            </td>
+            <td> {{ book.title }} </td>
+            <td> {{ book.author }} </td>
+            <td>
+                <button (click) = "updateBook(book.id)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deleteBook(book.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "bookDetails(book.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

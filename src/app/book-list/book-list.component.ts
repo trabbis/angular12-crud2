@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../book';
+import { Router } from '@angular/router';
+import { BookService } from '../book.service';
+
 
 @Component({
   selector: 'app-book-list',
@@ -7,9 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
-  constructor() { }
+
+  books!: Book[];
+
+  constructor(private bookService: BookService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.getBooks();
   }
+
+  private getBooks(){
+    this.bookService.getBooksList().subscribe(data => {
+      this.books = data;
+    });
+  }
+
+  bookDetails(id: number){
+    this.router.navigate(['employee-details', id]);
+  }
+
+  updateBook(id: number){
+    this.router.navigate(['update-book', id]);
+  }
+
+  deleteBook(id: number){
+    this.bookService.deleteBook(id).subscribe( data => {
+      console.log(data);
+      this.getBooks();
+    })
+  }
+
 
 }
