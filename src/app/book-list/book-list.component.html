@@ -6,9 +6,6 @@
     <thead>
         <tr>
             <th> Title</th>
-            <th> Cover </th>
-            <th> Authoer</th>
-            <th> Actions </th>
         </tr>
     </thead>
     <tbody>
@@ -19,14 +16,9 @@
 
                 <img alt="{{ book.title }}" src="/assets/images/{{ book.cover }}">
                 </a>
-
-            </td>
-            <td> {{ book.title }} </td>
-            <td> {{ book.author }} </td>
-            <td>
+                <br>
                 <button (click) = "updateBook(book.id)" class = "btn btn-primary"> Update</button>
-                <button (click) = "deleteBook(book.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "bookDetails(book.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+
             </td>
         </tr>
     </tbody>
