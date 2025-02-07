@@ -12,7 +12,10 @@ import { BookService } from '../book.service';
 export class BookListComponent implements OnInit {
 
 
-  books!: Book[];
+  allBooks: any[] = [];
+  mysteryBooks!: any[];
+  vacationBooks!: any[];
+
 
   constructor(private bookService: BookService,
     private router: Router) { }
@@ -23,24 +26,26 @@ export class BookListComponent implements OnInit {
 
   private getBooks(){
     this.bookService.getBooksList().subscribe(data => {
-      this.books = data;
+      this.allBooks = data;
+      this.mysteryBooks = this.allBooks.filter(book => book.carouselId === 1);
+      this.vacationBooks = this.allBooks.filter(book => book.carouselId === 2);
     });
   }
 
-  bookDetails(id: number){
-    this.router.navigate(['employee-details', id]);
-  }
+  // bookDetails(id: number){
+  //   this.router.navigate(['employee-details', id]);
+  // }
 
   updateBook(id: number){
     this.router.navigate(['update-book', id]);
   }
 
-  deleteBook(id: number){
-    this.bookService.deleteBook(id).subscribe( data => {
-      console.log(data);
-      this.getBooks();
-    })
-  }
+  // deleteBook(id: number){
+  //   this.bookService.deleteBook(id).subscribe( data => {
+  //     console.log(data);
+  //     this.getBooks();
+  //   })
+  // }
 
 
 }
