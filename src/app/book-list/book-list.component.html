@@ -5,7 +5,31 @@
 <table class = "table table-striped table-bordered">
     <thead>
         <tr>
-            <th> Title</th>
+            <th>Solve the mystery</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let book of books" >
+            <td>  
+
+                <a href="{{ book.overdriveUrl }}" class="bookContent" onclick="ga('send', 'event', 'Book Click', 'Solve the mystery', 'The Maid by Nita Prose');">
+
+                <img alt="{{ book.title }}" src="/assets/images/{{ book.cover }}">
+                </a>
+                <br>
+                <button (click) = "updateBook(book.id)" class = "btn btn-primary"> Update</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br><br>
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Plan your vacation</th>
         </tr>
     </thead>
     <tbody>
