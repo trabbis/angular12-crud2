@@ -11,6 +11,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { CreateBookComponent } from './create-book/create-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { BookListComponent } from './book-list/book-list.component'
+import { ChunkPipe } from './shared/chunk.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BookListComponent } from './book-list/book-list.component'
     EmployeeDetailsComponent,
     CreateBookComponent,
     UpdateBookComponent,
-    BookListComponent
+    BookListComponent,
+    ChunkPipe
   ],
   imports: [
     BrowserModule,

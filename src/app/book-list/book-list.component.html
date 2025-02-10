@@ -1,50 +1,64 @@
-<div class = "row">
-    <h2> Book List</h2>
+<div class="container">
+    <!-- Mystery Books Section -->
+    <div class="row mb-4">
+        <h2>Solve the Mystery</h2>
+        <div id="mysteryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let group of mysteryBooks | chunk:4; let first = first" [class.active]="first">
+                    <div class="row">
+                        <div class="col-md-3" *ngFor="let book of group">
+                            <div class="book-item">
+                                <a [href]="book.overdriveUrl" class="bookContent" 
+                                   onclick="ga('send', 'event', 'Book Click', 'Solve the mystery', 'The Maid by Nita Prose');">
+                                    <img [alt]="book.title" src="/assets/images/{{book.cover}}" class="img-fluid">
+                                </a>
+                                <br>
+                                <button (click)="updateBook(book.id)" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mysteryCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mysteryCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Vacation Books Section -->
+    <div class="row mb-4">
+        <h2>Plan Your Vacation</h2>
+        <div id="vacationCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let group of vacationBooks | chunk:4; let first = first" [class.active]="first">
+                    <div class="row">
+                        <div class="col-md-3" *ngFor="let book of group">
+                            <div class="book-item">
+                                <a [href]="book.overdriveUrl" class="bookContent" 
+                                   onclick="ga('send', 'event', 'Book Click', 'Plan your vacation', 'The Maid by Nita Prose');">
+                                    <img [alt]="book.title" src="/assets/images/{{book.cover}}" class="img-fluid">
+                                </a>
+                                <br>
+                                <button (click)="updateBook(book.id)" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#vacationCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#vacationCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 </div>
-
-<table class = "table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th class="mystery-section-header">Solve the mystery</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let book of mysteryBooks" >
-            <td>  
-
-                <a href="{{ book.overdriveUrl }}" class="bookContent" onclick="ga('send', 'event', 'Book Click', 'Solve the mystery', 'The Maid by Nita Prose');">
-
-                <img alt="{{ book.title }}" src="/assets/images/{{ book.cover }}">
-                </a>
-                <br>
-                <button (click) = "updateBook(book.id)" class = "btn btn-primary"> Update</button>
-
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<br><br>
-<table class = "table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th class="vacation-section-header">Plan your vacation</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let book of vacationBooks" >
-            <td>  
-
-                <a href="{{ book.overdriveUrl }}" class="bookContent" onclick="ga('send', 'event', 'Book Click', 'Solve the mystery', 'The Maid by Nita Prose');">
-
-                <img alt="{{ book.title }}" src="/assets/images/{{ book.cover }}">
-                </a>
-                <br>
-                <button (click) = "updateBook(book.id)" class = "btn btn-primary"> Update</button>
-
-            </td>
-        </tr>
-    </tbody>
-</table>
 
