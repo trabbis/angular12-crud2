@@ -7,7 +7,7 @@
                 <div class="carousel-item" *ngFor="let group of mysteryBooks | chunk:4; let first = first" [class.active]="first">
                     <div class="row">
                         <div class="col-md-3" *ngFor="let book of group">
-                            <div class="book-item">
+                            <div class="book-item" title="Click to open a sample from '{{book.title}}'">
                                 <a [href]="book.overdriveUrl" class="bookContent" 
                                    onclick="ga('send', 'event', 'Book Click', 'Solve the mystery', 'The Maid by Nita Prose');">
                                     <img [alt]="book.title" src="/assets/images/{{book.cover}}" class="img-fluid">
@@ -38,7 +38,7 @@
                 <div class="carousel-item" *ngFor="let group of vacationBooks | chunk:4; let first = first" [class.active]="first">
                     <div class="row">
                         <div class="col-md-3" *ngFor="let book of group">
-                            <div class="book-item">
+                            <div class="book-item" title="Click to open a sample from '{{book.title}}'">
                                 <a [href]="book.overdriveUrl" class="bookContent" 
                                    onclick="ga('send', 'event', 'Book Click', 'Plan your vacation', 'The Maid by Nita Prose');">
                                     <img [alt]="book.title" src="/assets/images/{{book.cover}}" class="img-fluid">
@@ -69,7 +69,7 @@
                 <div class="carousel-item" *ngFor="let group of makeMillionsBooks | chunk:4; let first = first" [class.active]="first">
                     <div class="row">
                         <div class="col-md-3" *ngFor="let book of group">
-                            <div class="book-item">
+                            <div class="book-item" title="Click to open a sample from '{{book.title}}'">
                                 <a [href]="book.overdriveUrl" class="bookContent" 
                                    onclick="ga('send', 'event', 'Book Click', 'Plan your vacation', 'The Maid by Nita Prose');">
                                     <img [alt]="book.title" src="/assets/images/{{book.cover}}" class="img-fluid">
@@ -100,7 +100,7 @@
                 <div class="carousel-item" *ngFor="let group of getTheFacts | chunk:4; let first = first" [class.active]="first">
                     <div class="row">
                         <div class="col-md-3" *ngFor="let book of group">
-                            <div class="book-item">
+                            <div class="book-item" title="Click to open a sample from '{{book.title}}'">
                                 <a [href]="book.overdriveUrl" class="bookContent" 
                                    onclick="ga('send', 'event', 'Book Click', 'Plan your vacation', 'The Maid by Nita Prose');">
                                     <img [alt]="book.title" src="/assets/images/{{book.cover}}" class="img-fluid">
@@ -131,7 +131,7 @@
                 <div class="carousel-item" *ngFor="let group of fallInLove | chunk:4; let first = first" [class.active]="first">
                     <div class="row">
                         <div class="col-md-3" *ngFor="let book of group">
-                            <div class="book-item">
+                            <div class="book-item" title="Click to open a sample from '{{book.title}}'">
                                 <a [href]="book.overdriveUrl" class="bookContent" 
                                    onclick="ga('send', 'event', 'Book Click', 'Plan your vacation', 'The Maid by Nita Prose');">
                                     <img [alt]="book.title" src="/assets/images/{{book.cover}}" class="img-fluid">
