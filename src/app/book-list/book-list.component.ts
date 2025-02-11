@@ -15,6 +15,9 @@ export class BookListComponent implements OnInit {
   allBooks: any[] = [];
   mysteryBooks!: any[];
   vacationBooks!: any[];
+  makeMillionsBooks!: any[];
+  getTheFacts!: any[];
+  fallInLove!: any[];
 
 
   constructor(private bookService: BookService,
@@ -29,6 +32,9 @@ export class BookListComponent implements OnInit {
       this.allBooks = data;
       this.mysteryBooks = this.allBooks.filter(book => book.carouselId === 1);
       this.vacationBooks = this.allBooks.filter(book => book.carouselId === 2);
+      this.makeMillionsBooks = this.allBooks.filter(book => book.carouselId === 3);
+      this.getTheFacts = this.allBooks.filter(book => book.carouselId === 4);
+      this.fallInLove = this.allBooks.filter(book => book.carouselId === 5);
     });
   }
 
