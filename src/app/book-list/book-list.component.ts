@@ -3,6 +3,7 @@ import { Book } from '../book';
 import { Router } from '@angular/router';
 import { BookService } from '../book.service';
 
+declare var ga: Function;
 
 @Component({
   selector: 'app-book-list',
@@ -52,6 +53,10 @@ export class BookListComponent implements OnInit {
   //     this.getBooks();
   //   })
   // }
+
+  trackBookClick(test: string, test2: string, test3: string, bookTitle: string, bookAuthor: string) {
+    //ga('send', 'event', 'Book Click', 'Solve the mystery', `${bookTitle} by ${bookAuthor}`);
+  }
 
 
 }
