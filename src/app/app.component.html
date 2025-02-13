@@ -12,6 +12,17 @@
 </nav>
 
 <h1 class="text-center"> {{title}} </h1>
+<div style="text-align: center;">
+  <div>
+    Try ebooks from <span><b>Toronto Public Library</b></span>. Curated by librarians for your commute.
+  </div>
+  <br>
+  <div>
+    Want thousands more? Get a <a href="https://www.torontopubliclibrary.ca/using-the-library/your-library-card/" onclick="ga('send', 'event', 'Link Click', 'Library card', 'https://www.torontopubliclibrary.ca/using-the-library/your-library-card/');"><b>library card</b></a> and <a class="scrollToLibby" onclick="ga('send', 'event', 'Link Click', 'The Libby app', 'scrollToLibby');"><b>the Libby app</b></a>.
+  </div>
+</div>
+
+
 <div class = "container">
   <router-outlet></router-outlet>
 </div>
